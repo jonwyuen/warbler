@@ -41,4 +41,15 @@ router.post("/users/:userId/warbles", function(req, res, next) {
     });
 });
 
+router.delete("/users/:userId/warbles/:warbleId", function(req, res, next) {
+  db.Warble
+    .findByIdAndRemove(req.params.warbleId)
+    .then(function(warble) {
+      res.status(204).json({ message: "Warble Deleted" });
+    })
+    .catch(function(err) {
+      res.send(err);
+    });
+});
+
 module.exports = router;
