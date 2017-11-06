@@ -27,6 +27,27 @@ const userSchema = new mongoose.Schema({
   ]
 });
 
+userSchema.pre("save", function(next) {
+  let user = this;
+  if (!user.isModified("password")) return next();
+  bcrypt.hash(user.password, 10).then(
+    function(hashedPassword) {
+      user.password = hashedPassword;
+      next();
+    },
+    function(err) {
+      return next(err);
+    }
+  );
+});
+
+userSchema.methods.comparePassword = function(inputPassword, next) {
+  bcrypt.compare(inputPassword, this.password, function(err, isMatch) {
+    if (err) return next(err);
+    next(null, isMatch);
+  });
+};
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
