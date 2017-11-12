@@ -3,7 +3,8 @@ const jwt = require("jsonwebtoken");
 
 exports.loginRequired = function(req, res, next) {
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    const token = req.headers.authorization;
+    // const token = req.headers.authorization.split(" ")[1];
     jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
       if (decoded) {
         next();
@@ -18,9 +19,10 @@ exports.loginRequired = function(req, res, next) {
 
 exports.ensureCorrectUser = function(req, res, next) {
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    const token = req.headers.authorization;
+    // const token = req.headers.authorization.split(" ")[1];
     jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
-      if (decoded.user_id === req.params.userId) {
+      if (decoded.userId === req.params.userId) {
         next();
       } else {
         res.status(401).send("Unauthorized");
