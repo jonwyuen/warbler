@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router({ mergeParams: true });
 const db = require("../models");
 
-router.get("/users/:userId/warbles", function(req, res, next) {
+router.get("/", function(req, res, next) {
   db.Warble
     .find({ userId: req.params.user_id })
     .then(function(warbles) {
@@ -13,7 +13,7 @@ router.get("/users/:userId/warbles", function(req, res, next) {
     });
 });
 
-router.post("/users/:userId/warbles", function(req, res, next) {
+router.post("/", function(req, res, next) {
   const newWarble = {
     message: req.body.message,
     userId: req.params.userId
@@ -42,7 +42,7 @@ router.post("/users/:userId/warbles", function(req, res, next) {
     .catch(next);
 });
 
-router.delete("/users/:userId/warbles/:warbleId", function(req, res, next) {
+router.delete("/:warbleId", function(req, res, next) {
   db.Warble
     .findByIdAndRemove(req.params.warbleId)
     .then(function(warble) {
