@@ -17,6 +17,19 @@ const warbleSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+warbleSchema.pre("remove", function(next) {
+  User.findById(this.userId)
+    .then(user => {
+      user.messages.remove(this.id);
+      user.save().then(function(e) {
+        next();
+      });
+    })
+    .catch(function(err) {
+      next(err);
+    });
+});
+
 const Warble = mongoose.model("Warble", warbleSchema);
 
 module.exports = Warble;
