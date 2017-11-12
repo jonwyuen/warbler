@@ -2,17 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-router.post("/", function(req, res, next) {
-  db.User
-    .create(req.body)
-    .then(function(user) {
-      res.status(201).json(user);
-    })
-    .catch(function(err) {
-      res.send(err);
-    });
-});
-
 router.get("/:userId", function(req, res, next) {
   db.User
     .findById(req.params.userId)
