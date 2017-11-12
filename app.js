@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/users", auth.loginRequired, auth.ensureCorrectUser, userRoutes);
 app.use(
   "/api/users/:userId/warbles",
   auth.loginRequired,
