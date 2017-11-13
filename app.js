@@ -13,14 +13,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// auth.ensureCorrectUser not working properly
 app.use("/api/auth", authRoutes);
-app.use("/api/users", auth.loginRequired, auth.ensureCorrectUser, userRoutes);
-app.use(
-  "/api/users/:userId/warbles",
-  auth.loginRequired,
-  auth.ensureCorrectUser,
-  warbleRoutes
-);
+app.use("/api/users", auth.loginRequired, userRoutes);
+app.use("/api/users/:userId/warbles", auth.loginRequired, warbleRoutes);
 
 app.get("/", function(req, res) {
   res.json({ message: "Welcome to Warbler" });

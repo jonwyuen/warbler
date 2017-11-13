@@ -4,7 +4,7 @@ const db = require("../models");
 
 router.get("/", function(req, res, next) {
   db.Warble
-    .find({ userId: req.params.user_id })
+    .find({ userId: req.params.userId })
     .then(function(warbles) {
       res.status(200).json(warbles);
     })
@@ -18,6 +18,7 @@ router.post("/", function(req, res, next) {
     message: req.body.message,
     userId: req.params.userId
   };
+  console.log(req.params);
   db.Warble
     .create(newWarble)
     .then(function(warble) {
