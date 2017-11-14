@@ -14,7 +14,7 @@ router.post("/signup", function(req, res, next) {
       res.status(201).json({
         token,
         userId: user.id,
-        username: user.usernmae,
+        username: user.username,
         profileImage: user.profileImage
       });
     })
@@ -33,7 +33,7 @@ router.post("/login", function(req, res, next) {
           res.status(200).json({
             token,
             userId: user.id,
-            username: user.usernmae,
+            username: user.username,
             profileImage: user.profileImage
           });
         } else {

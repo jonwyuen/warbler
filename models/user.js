@@ -17,7 +17,9 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   profileImage: {
-    type: String
+    type: String,
+    default:
+      "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
   },
   warbles: [
     {
