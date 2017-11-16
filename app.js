@@ -34,10 +34,12 @@ app.get("/", function(req, res) {
 app.get("/api/public/:username", function(req, res, next) {
   db.User
     .findOne({ username: req.params.username })
+    .populate("warbles", { message: true, createdAt: true })
     .then(function(user) {
       let userInfo = {
         username: user.username,
-        profileImage: user.profileImage
+        profileImage: user.profileImage,
+        warbles: user.warbles
       };
       res.status(200).json(userInfo);
     })
