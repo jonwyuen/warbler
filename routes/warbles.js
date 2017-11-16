@@ -18,7 +18,6 @@ router.post("/", function(req, res, next) {
     message: req.body.message,
     userId: req.params.userId
   };
-  console.log(req.params);
   db.Warble
     .create(newWarble)
     .then(function(warble) {

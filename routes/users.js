@@ -13,7 +13,7 @@ const db = require("../models");
 //     });
 // });
 
-router.patch("/:userId", function(req, res, next) {
+router.patch("/", function(req, res, next) {
   db.User
     .findByIdAndUpdate(req.params.userId)
     .then(function(user) {
@@ -24,7 +24,7 @@ router.patch("/:userId", function(req, res, next) {
     });
 });
 
-router.delete("/:userId", function(req, res, next) {
+router.delete("/", function(req, res, next) {
   db.User
     .findByIdAndRemove(req.params.userId)
     .then(function() {
