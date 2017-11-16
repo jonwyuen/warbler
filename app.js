@@ -22,6 +22,17 @@ app.get("/", function(req, res) {
   res.json({ message: "Welcome to Warbler" });
 });
 
+app.get("/api/users/:userId", function(req, res, next) {
+  db.User
+    .findById(req.params.userId)
+    .then(function(user) {
+      res.status(200).json(user);
+    })
+    .catch(function(err) {
+      res.send(err);
+    });
+});
+
 app.get("/api/warbles", function(req, res, next) {
   db.Warble
     .find()
