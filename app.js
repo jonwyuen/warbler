@@ -31,11 +31,15 @@ app.get("/", function(req, res) {
   res.json({ message: "Welcome to Warbler" });
 });
 
-app.get("/api/users/:userId", function(req, res, next) {
+app.get("/api/public/:username", function(req, res, next) {
   db.User
-    .findById(req.params.userId)
+    .findOne({ username: req.params.username })
     .then(function(user) {
-      res.status(200).json(user);
+      let userInfo = {
+        username: user.username,
+        profileImage: user.profileImage
+      };
+      res.status(200).json(userInfo);
     })
     .catch(function(err) {
       res.send(err);
