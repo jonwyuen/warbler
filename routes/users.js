@@ -35,4 +35,26 @@ router.delete("/", function(req, res, next) {
     });
 });
 
+router.post("/followUser", function(req, res, next) {
+  db.User
+    .findOne({ username: req.body.username })
+    .then(function(user) {
+      var followedUser = user._id;
+      user.followers.push(req.params.userId);
+      user
+        .save()
+        .then(function(u) {
+          db.User
+            .findById(req.params.userId)
+            .then(function(currUser) {
+              currUser.following.push(followedUser);
+              currUser.save();
+            })
+            .catch(next);
+        })
+        .catch(next);
+    })
+    .catch(next);
+});
+
 module.exports = router;
