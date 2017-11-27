@@ -26,6 +26,18 @@ const userSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Warble"
     }
+  ],
+  followers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ret: "User"
+    }
+  ],
+  following: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ret: "User"
+    }
   ]
 });
 
