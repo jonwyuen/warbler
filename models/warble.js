@@ -8,6 +8,12 @@ const warbleSchema = new mongoose.Schema(
       required: true,
       maxLength: 140
     },
+    mediaUrl: {
+      type: String
+    },
+    likes: {
+      type: Number
+    },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
