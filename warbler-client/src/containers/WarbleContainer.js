@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Warble from "../components/Warble";
 import axios from "axios";
-import { setAuthorizationToken } from "../setAuthorizationToken";
 import moment from "moment";
 
 class WarbleContainer extends Component {
@@ -49,27 +48,6 @@ class WarbleContainer extends Component {
     });
 
     this.getWarbles();
-
-    // Create token and store in localStorage
-    // axios
-    //   .post("http://localhost:3000/users/auth", {
-    //     username: "hello",
-    //     password: "hello"
-    //   })
-    //   .then(res => {
-    //     const token = res.data.token;
-    //     localStorage.setItem('token', token)
-
-    // //     // After setting authorization token, new API calls will autmaically have the token included in the header.
-    //     setAuthorizationToken(token);  //<-- setting auth token.
-    //     // axios
-    //     //     .post("http://localhost:3000/warblers/45", {
-    //     //       message: "Yes, TokensORKS!"
-    //     //     })
-    //     //     .then(v => {
-    //     //       console.log(v);
-    //     //     });
-    //   });
   }
 
   render() {
