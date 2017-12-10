@@ -1,25 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "warbler-client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.17.0",
-    "moment": "^2.19.1",
-    "react": "^16.0.0",
-    "react-bootstrap": "^0.31.5",
-    "react-dom": "^16.0.0",
-    "react-router-bootstrap": "^0.24.4",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.14",
-    "react-transition-group": "^2.2.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-=======
   "name": "warbler-server",
   "version": "1.0.0",
   "description": "",
@@ -37,6 +16,5 @@
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.13.1"
->>>>>>> server/master
   }
 }
