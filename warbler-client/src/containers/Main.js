@@ -4,7 +4,7 @@ import UserForm from "../components/UserForm";
 import WarbleForm from "../components/WarbleForm";
 import ProfileContainer from "./ProfileContainer";
 import Home from "./Home";
-import * as userActions from "../userHelpers";
+import * as actions from "../helpers";
 import axios from "axios";
 
 class Main extends Component {
@@ -24,7 +24,7 @@ class Main extends Component {
           username: res.data.username,
           profileImage: res.data.profileImage
         };
-        userActions.setCurrentUser(warblerUser);
+        actions.setCurrentUser(warblerUser);
         this.props.history.push("/");
       })
       .catch(err => {
@@ -32,10 +32,25 @@ class Main extends Component {
       });
   }
 
-  handleWarbleSubmit(message) {}
+  handleWarbleSubmit(messageInfo) {
+    const userId = actions.getCurrentUser().userId;
+
+    axios
+      .post(
+        `http://localhost:3001/api/users/${userId}/warbles`,
+        actions.config(),
+        messageInfo
+      )
+      .then(res => {
+        this.props.history.push("/");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   render() {
-    const currentUser = userActions.getCurrentUser();
+    const currentUser = actions.getCurrentUser();
     return (
       <main>
         <Switch>

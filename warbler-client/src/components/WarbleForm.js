@@ -7,7 +7,8 @@ class WarbleForm extends Component {
     super(props);
 
     this.state = {
-      message: ""
+      message: "",
+      media: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,8 +22,8 @@ class WarbleForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let message = this.state.message;
-    this.props.handleWarbleSubmit(message);
+    let messageInfo = this.state;
+    this.props.handleWarbleSubmit(messageInfo);
   }
 
   render() {
@@ -47,8 +48,13 @@ class WarbleForm extends Component {
               type="text"
             />
             <div>  
-              <label htmlFor="">Media URL: </label>
-              <input type="text"/>
+              <label htmlFor="media">Media URL: </label>
+              <input placeholder="Image"
+              onChange={this.handleChange}
+              name="media"
+              value={this.state.media}
+              type="text"
+              />
             </div>
             <button>Warble</button>
           </form>

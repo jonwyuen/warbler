@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import { getCurrentUser, logoutCurrentUser } from "../userHelpers";
+import { getCurrentUser, logoutCurrentUser } from "../helpers";
 import UserDropdown from "./UserDropdown";
 import "./Nav.css";
 
