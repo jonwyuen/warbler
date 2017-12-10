@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "warbler-client",
   "version": "0.1.0",
   "private": true,
@@ -19,24 +18,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-=======
-  "name": "warbler-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^1.0.3",
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "dotenv": "^4.0.0",
-    "express": "^4.16.2",
-    "jsonwebtoken": "^8.1.0",
-    "mongoose": "^4.13.1"
->>>>>>> server/master
   }
 }
