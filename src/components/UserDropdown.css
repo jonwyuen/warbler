@@ -1,0 +1,33 @@
+#user-dropdown {
+  background-color: lightblue;
+  font-size: 18px;
+  color: black;
+  border: none;
+  border-radius: 0;
+  height: 60px;
+}
+
+#user-dropdown span {
+  margin-left: 8px;
+}
+
+#user-dropdown:hover {
+  opacity: 0.6;
+}
+
+.dropdown-item .dropdown-link {
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover {
+  background-color: white;
+  color: #2aa3ef;
+}
+
+.dropdown-menu {
+  width: 150px;
+  font-size: 16px;
+  background-color: lightblue;
+}

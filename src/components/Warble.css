@@ -1,0 +1,56 @@
+.warble-wrapper {
+  margin: 15px;
+  width: 300px;
+  background-color: white;
+  color: black;
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.warble-wrapper span {
+  margin-right: 10px;
+}
+
+.warble-wrapper a {
+}
+
+.warble-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.warble-username a {
+  font-weight: bold;
+  color: black;
+}
+
+.warble-username a:hover {
+  color: #84c3ed;
+}
+
+.warble-handle {
+  margin-left: 40px;
+  position: relative;
+  bottom: 14px;
+}
+
+.warble-handle a {
+  text-decoration: none;
+  color: gray;
+}
+
+.warble-time {
+  margin-left: auto;
+  color: gray;
+}
+
+.warble-message {
+  margin-top: -5px;
+  overflow-wrap: break-word;
+}
+
+.warble-actions {
+  font-size: 10px;
+}

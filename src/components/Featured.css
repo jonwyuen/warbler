@@ -1,0 +1,13 @@
+.featured-wrapper {
+  margin-top: 100px;
+}
+
+.featured-wrapper > h2 {
+  text-align: center;
+}
+
+.featured-warbles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
