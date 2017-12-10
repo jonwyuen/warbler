@@ -16,7 +16,7 @@ router.get("/", function(req, res, next) {
 router.post("/", function(req, res, next) {
   const newWarble = {
     message: req.body.message,
-    media: req.body.media,
+    mediaUrl: req.body.mediaUrl,
     userId: req.params.userId
   };
   db.Warble
