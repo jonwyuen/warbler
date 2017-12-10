@@ -20,6 +20,7 @@ class Featured extends Component {
         return {
           id: w._id,
           message: w.message,
+          mediaUrl: w.mediaUrl,
           username: w.userId.username,
           profileImage: w.userId.profileImage,
           createdAt: w.createdAt
@@ -63,6 +64,7 @@ class Featured extends Component {
           <Warble
             key={w.id}
             username={w.username}
+            mediaUrl={w.mediaUrl}
             message={w.message}
             profileImage={w.profileImage}
             timeFromNow={moment(w.createdAt).fromNow(true)}

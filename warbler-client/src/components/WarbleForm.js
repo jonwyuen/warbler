@@ -8,7 +8,7 @@ class WarbleForm extends Component {
 
     this.state = {
       message: "",
-      media: ""
+      mediaUrl: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,7 +52,7 @@ class WarbleForm extends Component {
               <input placeholder="Image"
               onChange={this.handleChange}
               name="media"
-              value={this.state.media}
+              value={this.state.mediaUrl}
               type="text"
               />
             </div>

@@ -6,7 +6,9 @@ class Warble extends Component {
   render() {
     return (
       <div className="warble-wrapper">
-        <div className="warble-media" />
+        <div className="warble-media"> 
+          <img src={this.props.mediaUrl} alt="warble media"/>
+        </div>
         <div className="warble-info">
           <span>
             <img
