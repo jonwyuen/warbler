@@ -6,11 +6,12 @@
   background-color: lightblue;
   border: 0.5px solid lightgray;
   border-radius: 5px;
-  text-align: center;
+  text-align: center;  
 }
 
 .warble-form-wrapper textarea {
   margin-top: 10px;
+  margin-bottom: 10px;
   resize: none;
   width: 25vw;
   height: 15vh;
@@ -23,6 +24,18 @@
 }
 
 .warble-form-wrapper textarea:focus {
+  outline: none;
+}
+
+.warble-form-wrapper input {
+  margin-left: 5px;
+  padding: 5px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.warble-form-wrapper input:focus {
   outline: none;
 }
 

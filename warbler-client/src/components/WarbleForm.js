@@ -46,6 +46,10 @@ class WarbleForm extends Component {
               value={this.state.message}
               type="text"
             />
+            <div>  
+              <label htmlFor="">Media URL: </label>
+              <input type="text"/>
+            </div>
             <button>Warble</button>
           </form>
         </div>
